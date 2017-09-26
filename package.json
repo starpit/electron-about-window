@@ -1,19 +1,19 @@
 {
-  "name": "about-window",
+  "name": "electron-about-window",
   "version": "1.7.1",
   "description": "'About App' window for Electron application",
   "main": "src/index.js",
   "scripts": {
     "dep": "npm install",
     "build": "tsc -p src/",
-    "tslint": "tslint $(git ls-files | grep -E \"\\.ts$\")",
     "tslint": "tslint -p ./src --type-check",
     "stylelint": "stylelint styles/*.css",
     "lint": "npm run tslint && npm run stylelint",
     "example": "NODE_ENV=production electron ./example",
     "debug": "electron ./example",
     "start": "npm run dep && npm run build && npm run example",
-    "preversion": "npm run lint && npm run build"
+    "preversion": "npm run lint && npm run build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
